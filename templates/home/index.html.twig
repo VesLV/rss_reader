@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <div class="most-frequent-words">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Word</th>
+                <th scope="col">Count</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for word in most_frequent_words %}
+                <tr>
+                    <td>{{ word.word }}</td>
+                    <td>{{ word.count }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="rss-feed">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Word</th>
+                <th scope="col">Count</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for word in rss_feed %}
+                <tr>
+                    <td>{{ word.word }}</td>
+                    <td>{{ word.count }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
