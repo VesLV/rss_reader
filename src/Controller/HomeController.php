@@ -10,7 +10,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
+    /**
+     * @var RssReader
+     */
     private $rssReader;
+
+    /**
+     * @var MostFrequentWordReader
+     */
     private $mostFrequentWordReader;
     /**
      * HomeController constructor.

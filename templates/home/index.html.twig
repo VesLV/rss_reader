@@ -3,7 +3,8 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-    <div class="most-frequent-words">
+    <div class="most-frequent-words border table-responsive col-12 col-sm-8 offset-sm-2 col-md-8 offset-md-2">
+        <h3 class="table-title">Top 10 most frequent words from rss feed excluding top 50 words from wiki</h3>
         <table class="table table-striped">
             <thead>
             <tr>
@@ -21,7 +22,8 @@
             </tbody>
         </table>
     </div>
-    <div class="rss-feed">
+    <div class="rss-feed table-responsive border col-12 col-sm-8 offset-sm-2 col-md-8 offset-md-2">
+        <h3 class="table-title"> Rss feed </h3>
         <table class="table table-striped">
             <thead>
             <tr>

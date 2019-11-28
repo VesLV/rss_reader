@@ -41,14 +41,10 @@ class RegistrationController extends AbstractController
     /**
      * @param Request $request
      * @Route("/registration/register", name="register")
-     * @return JsonResponse|\Symfony\Component\HttpFoundation\RedirectResponse
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function registerUser(Request $request)
     {
-        if (!$request->isMethod('POST')) {
-            return new JsonResponse(false);
-        }
-
         $email =$request->get('email');
         $response = $this->userRepository->checkEmailExists($email);
         if ($response) {
@@ -66,9 +62,6 @@ class RegistrationController extends AbstractController
      */
     public function emailValidation(Request $request): JsonResponse
     {
-//        if (!$request->isMethod('POST')) {
-//            return new JsonResponse('fail');
-//        }
         $email = $request->get('email');
         $response = $this->userRepository->checkEmailExists($email);
         return new JsonResponse($response);
